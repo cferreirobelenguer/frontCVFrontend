@@ -1,0 +1,6 @@
+$icon-increment: 380%;
+$icon-value : 70%;
+
+@mixin incrementIcon ($useDoubleIncrement: false) {
+    transform: translateY($icon-value + if($useDoubleIncrement, 2 * $icon-increment, $icon-increment));
+}

@@ -1,0 +1,83 @@
+@import '../../assets/scss/responsive.scss';
+@import '../../assets/scss/fonts.scss';
+@import '../../assets/scss/icon.scss';
+
+.form {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 32px;
+    @include tablet {
+        flex-direction: row;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap:16px;
+    }
+    &__img {
+        width: 100%;
+        box-sizing: border-boz;
+    }
+    &__title {
+        font-family: $raleway;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    &__text {
+        font-family: $raleway;
+        margin: 0;
+        font-size: 24px;
+    }
+    &__textsecondary {
+        font-family: $raleway;
+        margin: 0;
+        font-size: 16px;
+        color: dimgray;
+    }
+    &__formulary {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &--input {
+            padding: 10px;
+        };
+
+        &__button {
+            background-color: #1C1C1C;
+            text-align: left;
+            width: 150px;
+            height: auto;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+        }
+    }
+    &__formularyinput {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+        width: 100%;
+        
+    }
+}
+
+.icon {
+    position: absolute;
+    right: 50px;
+    transform: translateY($icon-value);
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-tel {
+    @include incrementIcon();
+}
+
+.icon-mail {
+    @include incrementIcon(true);
+}

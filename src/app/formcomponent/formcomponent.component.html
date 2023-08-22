@@ -1,0 +1,20 @@
+<section class="form">
+    <img src="https://i.ibb.co/8dc4nvR/curriculum-1.jpg" class="form__img">
+    <div class="form__container">
+        <h1 class="form__title">Mándanos tu curriculum</h1>
+        <p class="form__text">Registra tus datos y nos pondremos en contacto contigo en el menor tiempo posible.</p>
+        <form class="form__formulary" novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
+            <input type="text" placeholder="Nombre" class="form__formulary--input" formControlName="name">
+            <img src="../../assets/images/person.svg" class="icon">
+            <input type="tel" placeholder="Teléfono" class="form__formulary--input" formControlName="tel">
+            <img src="../../assets/images/call.svg"  class="icon icon-tel">
+            <input type="email" placeholder="E-mail" class="form__formulary--input" formControlName="email">
+            <img src="../../assets/images/mail.svg"  class="icon icon-mail">
+            <div class="form__formularyinput">
+                <label for="cv" class="form__text">Mándanos tu cv <span class="form__textsecondary">(formato pdf)</span></label>
+                <input type="file" accept="application/pdf" formControlName="pdf" (change)="onFileSelected($event)"/>
+            </div>
+            <button type="submit" [disabled]="user.invalid" class="form__formulary__button">Enviar</button>
+        </form>
+    </div>
+</section>
