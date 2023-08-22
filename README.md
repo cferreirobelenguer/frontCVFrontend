@@ -3,7 +3,8 @@
 ## Technologies:
 Angular, html, scss, css, Node.js, Node.js express, MongoDB Atlas
 
-##Librarys Node.js Express
+##Libraries 
+Node.js Express
 Nodemon, nodemailer, express, multer, dotenv, mongoose
 
 ## Description
