@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import {User} from '../interfaz/User';
 import { BackendService } from './services/form';
 
 @Component({
@@ -10,7 +9,6 @@ import { BackendService } from './services/form';
 })
 export class FormcomponentComponent implements OnInit {
   public user: FormGroup;
-  public data: User;
   public selectedFile: File | null = null;
 
   constructor(
@@ -24,12 +22,6 @@ export class FormcomponentComponent implements OnInit {
       email: new FormControl('',[Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")]),
       pdf: [null, Validators.required]
     });
-    this.data = {
-      name: '',
-      tel: '',
-      email: '',
-      pdf: null
-    };
   }
 
   ngOnInit(): void {
@@ -37,12 +29,6 @@ export class FormcomponentComponent implements OnInit {
 
   public onSubmit () {
       //values inputs
-      this.data = {
-        name: this.user.controls['name'].value,
-        tel: this.user.controls['tel'].value,
-        email: this.user.controls['email'].value,
-        pdf: this.selectedFile
-      }
       const formData = new FormData();
       formData.append('name', this.user.controls['name'].value);
       formData.append('tel', this.user.controls['tel'].value);
